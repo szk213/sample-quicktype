@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ENUM": {
+            "type": "string",
+            "enum": [
+                "ABC"
+            ]
+        },
+        "Abc": {
+            "description": "素晴らしいAbc",
+            "title": "Abc",
+            "type": "object",
+            "properties": {
+                "a": {
+                    "description": "あ",
+                    "type": "string",
+                    "title": "a"
+                },
+                "b": {
+                    "description": "べ",
+                    "type": "number",
+                    "title": "b"
+                },
+                "c": {
+                    "$ref": "#/definitions/Def",
+                    "description": "し",
+                    "title": "c"
+                }
+            },
+            "required": [
+                "a",
+                "b",
+                "c"
+            ]
+        },
+        "Def": {
+            "title": "Def",
+            "type": "object",
+            "properties": {
+                "d": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "minItems": 1,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "title": "d"
+                },
+                "e": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 1,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "title": "e"
+                }
+            },
+            "required": [
+                "d",
+                "e"
+            ]
+        }
+    }
+}

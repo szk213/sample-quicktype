@@ -1,0 +1,12 @@
+{
+  "name": "sample-quicktype",
+  "scripts": {
+    "test": "node_modules/.bin/mocha",
+    "toJsonSchema": "quicktype -s typescript src/Test.ts  -l schema -o schema.json",
+    "aaa": "quicktype src/Test.ts -o schema.json --lang schema"
+  },
+  "dependencies": {
+    "quicktype": "^15.0.210",
+    "typescript": "^3.7.5"
+  }
+}
